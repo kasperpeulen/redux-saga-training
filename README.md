@@ -1,23 +1,24 @@
-# Initial page
+# Iterator
 
-## Getting Super Powers
+We call an object an `Iterator` if it implements the following interface.
+
+```typescript
+interface Iterator<T> {
+  next(): { value: T; done: boolean };
+}
+```
 
 Becoming a super hero is a fairly straight forward process:
 
+```typescript
+class Naturals implements Iterator<number> {
+  private i = 0;
+
+  next() {
+    this.i++;
+    return { value: this.i, done: false };
+  }
+}
+
 ```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-```
-// Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-
-
 
